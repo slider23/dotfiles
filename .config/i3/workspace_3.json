@@ -1,0 +1,46 @@
+// vim:ts=4:sw=4:et
+{
+    "border": "pixel",
+    "current_border_width": 2,
+    "floating": "auto_off",
+    "geometry": {
+       "height": 970,
+       "width": 1390,
+       "x": 260,
+       "y": 100
+    },
+    "name": "first_project [~/Work/first_project] - PhpStorm",
+    "percent": 0.7,
+    "swallows": [
+       {
+       // "class": "^jetbrains\\-phpstorm$",
+       // "instance": "^jetbrains\\-phpstorm$",
+       // "title": "^first_project\\ \\[\\~\\/Work\\/first_project\\]\\ \\-\\ PhpStorm$"
+       }
+    ],
+    "type": "con"
+}
+
+{
+    "border": "pixel",
+    "current_border_width": 2,
+    "floating": "auto_off",
+    "geometry": {
+       "height": 600,
+       "width": 800,
+       "x": 0,
+       "y": 0
+    },
+    "name": "@cgDISVMf:T | Сегодня: Todoist",
+    "percent": 0.3,
+    "swallows": [
+       {
+       // "class": "^Surf$",
+       // "instance": "^surf$",
+       // "title": "^\\@cgDISVMf\\:T\\ \\|\\ Сегодня\\:\\ Todoist$",
+       // "window_role": "^Surf\\[6\\]$"
+       }
+    ],
+    "type": "con"
+}
+
