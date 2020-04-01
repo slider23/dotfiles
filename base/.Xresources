@@ -56,7 +56,7 @@
 
 
 ! Application-specific configuration:
-#include "Xresources.d/urxvt"
+#include ".config/urxvt"
 
 !!-- Xft settings -- !
 !Xft.dpi:        96

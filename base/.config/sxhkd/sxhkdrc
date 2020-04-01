@@ -1,17 +1,3 @@
-################################################################################
-#      ___           ___           ___           ___          _____
-#     /  /\         /__/|         /__/\         /__/|        /  /::\ 
-#    /  /:/_       |  |:|         \  \:\       |  |:|       /  /:/\:\ 
-#   /  /:/ /\      |  |:|          \__\:\      |  |:|      /  /:/  \:\  
-#  /  /:/ /::\   __|__|:|      ___ /  /::\   __|  |:|     /__/:/ \__\:|
-# /__/:/ /:/\:\ /__/::::\____ /__/\  /:/\:\ /__/\_|:|____ \  \:\ /  /:/
-# \  \:\/:/~/:/    ~\~~\::::/ \  \:\/:/__\/ \  \:\/:::::/  \  \:\  /:/
-#  \  \::/ /:/      |~~|:|~~   \  \::/       \  \::/~~~~    \  \:\/:/
-#   \__\/ /:/       |  |:|      \  \:\        \  \:\         \  \::/
-#     /__/:/        |  |:|       \  \:\        \  \:\         \__\/  
-#     \__\/         |__|/         \__\/         \__\/
-################################################################################
-
 ######################################################################
 #
 # Claudio D. Arrieta's sxhkdrc
@@ -24,13 +10,13 @@
 super + o
 	sh $HOME/.scripts/launcher.sh
 
-# Launch terminal 
+# Launch terminal
 super + Return
-	st 
+	uxvrt
 
 # Launch alternative terminal
 super + shift + Return
-	urxvt
+	$TERMINAL
 
 # Launch rofi
 super + d
@@ -50,7 +36,7 @@ super + control + Escape
 	bspc quit
 
 ## close app
-super + q 
+super + q
 	bspc node -c
 
 ## close app (common way)
@@ -76,7 +62,7 @@ super + r
 ## focus the next node in the current desktop
 alt + Tab
 	bspc node -f next.local
-	
+
 ## focus the previous node in the current desktop
 alt + shift + Tab
 	bspc node -f prev.local

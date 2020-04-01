@@ -1,0 +1,18 @@
+#!/bin/sh
+
+# Use Xresources colors/settings on startup
+if [ -f ~/.Xresources ]; then
+    xrdb -merge ~/.Xresources
+fi
+
+# disable bell sound
+xset b off
+
+# autorepeat:
+# delay before autorepeat = 200ms
+# repeat rate = 50ms
+xset r rate 150 50
+
+# set keyboard layout
+setxkbmap -layout us,ru
+setxkbmap -option "caps:swapescape"
