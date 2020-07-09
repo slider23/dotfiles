@@ -4,6 +4,7 @@ alias free='free -m'                                            # Show sizes in 
 alias gitu='git add . && git commit && git push'
 
 PATH=/snap/bin/:$PATH
+PATH=~/.scripts/:$PATH
 
 alias ni3='nano ~/.config/i3/config'
 alias nxd='nano ~/.Xdefaults'
@@ -26,3 +27,10 @@ alias home='cd ~'
 alias win='cd /mnt/c/Users/mickael'
 alias sites='cd /mnt/c/Sites'
 alias dot='cd ~/.dotfiles'
+
+export DOCKER_HOST_IP=$(route -n | awk '/UG[ \t]/{print $2}')
+alias dry='docker run --rm -it -v /var/run/docker.sock:/var/run/docker.sock -e DOCKER_HOST=$DOCKER_HOST_IP moncho/dry'
+alias lzd='docker run --rm -it -v /var/run/docker.sock:/var/run/docker.sock -v ~/.config/lazydocker/config:/.config/jesseduffield/lazydocker lazyteam/lazydocker'
+#alias nano='micro'
+
+
