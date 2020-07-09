@@ -1,0 +1,35 @@
+#!/bin/sh
+echo "Try to set ip for windows and WSL hosts\n"
+export WIN_HOST_IP=$(cat /etc/resolv.conf | grep 'nameserver' | cut -f 2 -d ' ')
+export WSL_HOST_IP=$(ip addr show eth0 | grep 'inet ' | cut -f 6 -d ' ' | cut -f 1 -d '/')
+echo "Found windows host ip: $WIN_HOST_IP"
+echo "Found WSL2 host ip: $WSL_HOST_IP"
+rm /tmp/hosts
+if grep "wsl2" /mnt/c/Windows/System32/drivers/etc/hosts
+then
+    cp /mnt/c/Windows/System32/drivers/etc/hosts /tmp/hosts
+    sed -i "s/.*wsl2/$WSL_HOST_IP  wsl2/" /tmp/hosts
+    cat /tmp/hosts > /mnt/c/Windows/System32/drivers/etc/hosts
+else
+    echo "$WSL_HOST_IP  wsl2\n" >> /mnt/c/Windows/System32/drivers/etc/hosts
+fi
+rm /tmp/hosts
+if grep "winhost" /mnt/c/Windows/System32/drivers/etc/hosts
+then
+    cp /mnt/c/Windows/System32/drivers/etc/hosts /tmp/hosts
+    sed -i "s/.*winhost/$WIN_HOST_IP  winhost/" /tmp/hosts
+    cat /tmp/hosts > /mnt/c/Windows/System32/drivers/etc/hosts
+else
+    echo "$WIN_HOST_IP  winhost\n" >> /mnt/c/Windows/System32/drivers/etc/hosts
+fi
+#cat /mnt/c/Windows/System32/drivers/etc/hosts
+echo "done.\n"
+
+echo "Try to set DNS for VPN connection 8.8.8.8 "
+if grep "8.8.8.8" /etc/resolv.conf
+then
+    echo "nameserver exists."
+else
+    echo "nameserver	8.8.8.8\n" >> /etc/resolv.conf
+fi
+echo "done.\n"
