@@ -30,6 +30,6 @@ if grep "8.8.8.8" /etc/resolv.conf
 then
     echo "nameserver exists."
 else
-    echo "nameserver	8.8.8.8\n" >> /etc/resolv.conf
+    echo "nameserver 8.8.8.8\n" >> /etc/resolv.conf
 fi
 echo "done.\n"

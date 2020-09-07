@@ -28,6 +28,15 @@ alias win='cd /mnt/c/Users/mickael'
 alias sites='cd /mnt/c/Sites'
 alias dot='cd ~/.dotfiles'
 
+alias le='cd ~/work/learn-buddhism.local/'
+
+alias exec='docker-compose exec php'
+alias perm='enable_permissions'
+function enable_permissions(){
+    sudo chown -R mickael:mickael "$1" && chmod -R ug+rw "$1"
+}
+
+
 export DOCKER_HOST_IP=$(route -n | awk '/UG[ \t]/{print $2}')
 alias dry='docker run --rm -it -v /var/run/docker.sock:/var/run/docker.sock -e DOCKER_HOST=$DOCKER_HOST_IP moncho/dry'
 alias lzd='docker run --rm -it -v /var/run/docker.sock:/var/run/docker.sock -v ~/.config/lazydocker/config:/.config/jesseduffield/lazydocker lazyteam/lazydocker'
