@@ -42,4 +42,4 @@ alias dry='docker run --rm -it -v /var/run/docker.sock:/var/run/docker.sock -e D
 alias lzd='docker run --rm -it -v /var/run/docker.sock:/var/run/docker.sock -v ~/.config/lazydocker/config:/.config/jesseduffield/lazydocker lazyteam/lazydocker'
 #alias nano='micro'
 
-
+#alias toolbox='~/.local/share/JetBrains/Toolbox/bin/jetbrains-toolbox &'

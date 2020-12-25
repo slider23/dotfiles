@@ -2,8 +2,10 @@
 echo "Try to set ip for windows and WSL hosts\n"
 export WIN_HOST_IP=$(cat /etc/resolv.conf | grep 'nameserver' | cut -f 2 -d ' ')
 export WSL_HOST_IP=$(ip addr show eth0 | grep 'inet ' | cut -f 6 -d ' ' | cut -f 1 -d '/')
+export DOCKER_HOST_IP=$(ip route | grep docker0 | awk '{print $9}')
 echo "Found windows host ip: $WIN_HOST_IP"
 echo "Found WSL2 host ip: $WSL_HOST_IP"
+echo "Set Docker host ip: $DOCKER_HOST_IP"
 rm /tmp/hosts
 if grep "wsl2" /mnt/c/Windows/System32/drivers/etc/hosts
 then
